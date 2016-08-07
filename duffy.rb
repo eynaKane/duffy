@@ -1,7 +1,7 @@
 print "What's on your mind, Duffy? "
 user_input = gets.chomp
 
-unless user_input == 'exit'
+until user_input == 'exit'
   s = { (/s/) => ('th'), (/S/) => ('Th'),
         (/ce/) => ('the'), (/Ce/) => ('The'),
         (/ci/) => ('thi'), (/Ci/) => ('Thi'),
@@ -11,7 +11,7 @@ unless user_input == 'exit'
     user_input.gsub!(x, y)
   end
 
-  puts user_input
+  puts "Duffy says \"#{user_input}\""
 
   print "What's on your mind, Duffy? "
   user_input = gets.chomp
