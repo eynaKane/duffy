@@ -5,9 +5,9 @@ loop do
   print "What's on your mind, Duffy? "
 
   begin
-  	user_input = Timeout::timeout(3) { gets.chomp }
+    user_input = Timeout::timeout(3) { gets.chomp }
   rescue
-  	break
+    break
   end
 
   s = { (/t?s+/) => ('th'), (/t?S+/) => ('Th'),
