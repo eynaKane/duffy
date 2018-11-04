@@ -1,7 +1,15 @@
+require 'timeout'
+require 'pry'
+
 loop do
   print "What's on your mind, Duffy? "
-  user_input = gets.chomp
-  break if user_input =~ /exit/i
+
+  begin
+	  user_input = Timeout::timeout(3) { gets.chomp }
+	rescue
+		break
+	end
+
   s = { (/t?s+/) => ('th'), (/t?S+/) => ('Th'),
         (/ce/) => ('the'), (/Ce/) => ('The'),
         (/ci/) => ('thi'), (/Ci/) => ('Thi'),
